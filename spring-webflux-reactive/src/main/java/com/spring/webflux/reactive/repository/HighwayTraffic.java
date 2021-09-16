@@ -6,6 +6,6 @@ import reactor.core.publisher.Flux;
 
 public interface HighwayTraffic {
 	
-	public Flux<Vehicle> flowTraffic();
+	Flux<Vehicle> flowTraffic( String color);
 
 }

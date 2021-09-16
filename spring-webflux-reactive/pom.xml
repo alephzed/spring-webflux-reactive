@@ -43,6 +43,14 @@
 			<groupId>org.apache.commons</groupId>
 			<artifactId>commons-lang3</artifactId>
 		</dependency>
+		<!-- https://mvnrepository.com/artifact/org.projectlombok/lombok -->
+		<dependency>
+			<groupId>org.projectlombok</groupId>
+			<artifactId>lombok</artifactId>
+			<version>1.18.2</version>
+			<scope>provided</scope>
+		</dependency>
+
 
 		<dependency>
 			<groupId>org.apache.commons</groupId>
@@ -50,12 +58,12 @@
 			<version>1.3</version>
 		</dependency>
 
-		<dependency>
-			<groupId>io.netty</groupId>
-			<artifactId>netty-transport-native-epoll</artifactId>
-			<version>4.0.27.Final</version>
-			<classifier>linux-x86_64</classifier>
-		</dependency>
+		<!--<dependency>-->
+			<!--<groupId>io.netty</groupId>-->
+			<!--<artifactId>netty-transport-native-epoll</artifactId>-->
+			<!--<version>4.0.27.Final</version>-->
+			<!--<classifier>linux-x86_64</classifier>-->
+		<!--</dependency>-->
 		
 		<dependency>
 		    <groupId>org.springframework.boot</groupId>

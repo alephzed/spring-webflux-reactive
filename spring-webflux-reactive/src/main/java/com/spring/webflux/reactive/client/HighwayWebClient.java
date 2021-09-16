@@ -1,26 +1,24 @@
 package com.spring.webflux.reactive.client;
 
-import java.time.Duration;
-import java.util.concurrent.atomic.AtomicInteger;
-
+import com.spring.webflux.reactive.model.Vehicle;
 import org.springframework.http.MediaType;
 import org.springframework.web.reactive.function.client.WebClient;
-
-import com.spring.webflux.reactive.model.Vehicle;
-
 import reactor.core.Disposable;
 import reactor.core.scheduler.Schedulers;
+
+import java.time.Duration;
+import java.util.concurrent.atomic.AtomicInteger;
 
 public class HighwayWebClient {
 
     private WebClient webClient = WebClient.builder()
-        .baseUrl("http://localhost:8080")
+        .baseUrl("http://localhost:8082")
         .build();
 
     public Disposable vehicleDetected() {
         AtomicInteger counter = new AtomicInteger(0);
         return webClient.get()
-                .uri("/vehicles")
+                .uri("/vehicles/Blue")
                 .accept(MediaType.APPLICATION_STREAM_JSON)
                 .exchange()
                 .publishOn(Schedulers.single())
@@ -36,7 +34,7 @@ public class HighwayWebClient {
     public Disposable vehicleHigherThen120Detected() {
         AtomicInteger counter = new AtomicInteger(0);
         return webClient.get()
-                .uri("/vehicles")
+                .uri("/vehicles/Blue")
                 .accept(MediaType.APPLICATION_STREAM_JSON)
                 .exchange()
                 .flatMapMany(response -> response.bodyToFlux(Vehicle.class))

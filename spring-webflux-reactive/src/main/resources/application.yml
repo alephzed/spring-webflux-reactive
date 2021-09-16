@@ -1,3 +1,5 @@
+server:
+  port: 8083
 logging:
   level:
     root: INFO
@@ -9,5 +11,5 @@ logging:
     io.netty: ERROR
     reactor.ipc: ERROR
     reactor: ERROR
-    com.spring.webflux: ERROR  
+    com.spring.webflux: INFO
     org.springframework.web.reactive: ERROR

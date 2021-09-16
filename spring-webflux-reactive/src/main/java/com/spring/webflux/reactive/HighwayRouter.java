@@ -14,9 +14,11 @@ public class HighwayRouter {
     @Bean
     public RouterFunction<ServerResponse> route(HighwayHandler highwayHandler) {
         return RouterFunctions
-        		.route(RequestPredicates.GET("/vehicles")
-        				.and(RequestPredicates.accept(MediaType.APPLICATION_STREAM_JSON)), 
-        				highwayHandler::vehicleDetected);
+        		.route(RequestPredicates.GET("/vehicles/{color}")
+        				.and(RequestPredicates.accept(MediaType.APPLICATION_STREAM_JSON)),
+//                        request -> {
+//                            Mono<ServerResponse> response = Mono.justOrEmpty(request.pathVariable())
+                        highwayHandler::vehicleDetected);
     }
 
 }
